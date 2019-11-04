@@ -1,0 +1,37 @@
+{% for marketplaceBlock in marketplaceBlocks %}
+    {% if marketplaceBlock.title %}
+        <div class="marketplace-title-block">
+            <div class="marketplace-title">
+                <span>{{ marketplaceBlock.title }}</span>
+                <hr>
+            </div>
+        </div>
+    {% endif %}
+    {% if marketplaceBlock.widgets %}
+        {% set widgets = marketplaceBlock.widgets %}
+        <div class="marketplace-widget-card-container">
+            {% for widget in widgets %}
+                <div class="marketplace-widget-card__wrapper" title="{{ widget.description_name }}" code="{{ widget.wCode }}">
+                    <div id="{{ widget.wCode }}" class="marketplace-widget-card widget-card-new install" data-code="{{ widget.wCode }}">
+                        <div class="marketplace-widget-card-block-full">
+                            <div>
+                                <img class="marketplace-widget-card__img " src="{{widget.image_url}}" onerror="this.parentNode.className += ' marketplace-widget-card__img_border '; this.remove();">
+                            </div>
+                            <div class="marketplace-widget-card-notice">
+                                <div class="marketplace-widget-card-description">
+                                    <div class="marketplace-widget-card-description__name h-text-overflow">{{widget.description_name}}
+                                    </div>
+                                </div>
+                                <div class="marketplace-widget-card-description__short-text">{{widget.description_text}}
+                                </div>
+                                <div class="marketplace-widget-card-button" data-code="{{widget.wCode}}">
+                                    {{ widget.menuButton }}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    {% endif %}
+{% endfor %}

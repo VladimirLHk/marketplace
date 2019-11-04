@@ -1,0 +1,31 @@
+{
+    "name": "alarmcrm/marketplace",
+    "description": "A AlarmCRM Platform Widget.",
+    "keywords": [
+        "AlarmCRM",
+        "amoCRM",
+        "CRM",
+        "Widget"
+    ],
+    "license": "Commercial",
+    "require": {
+        "php": "^7.3"
+    },
+    "autoload": {
+        "psr-4": {
+            "AlarmCRM\\Marketplace\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "AlarmCRM\\Marketplace\\WidgetServiceProvider"
+            ]
+        }
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}

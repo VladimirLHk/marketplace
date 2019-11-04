@@ -1,0 +1,40 @@
+<div class="modal modal-list marketplace-widget-buy-form__wrapper {{ title }}" code="{{ wCode }}">
+    <div class="modal-scroller custom-scroll">
+        <div class="modal-body modal-body-relative marketplace-widget-buy-form">
+            <div class="marketplace-widget-buy-form__body">
+                <div class="marketplace-widget-buy-form__body-title-wrapper ">
+                    <div class="marketplace-widget-buy-form__body-title widget_settings_block__title h-text-overflow">{{ form_title }}</div>
+                </div>
+                <form class="marketplace-widget-buy-form__body-person" code="{{ wCode }}">
+                    {% for field in contact_fields %}
+                        <div class="marketplace-widget-buy-form__field-title">{{ field.title }}</div>
+                        <input name="{{field.name}}"
+                               class="{{class_name}} marketplace-widget-buy-form__placeholder-error text-input"
+                               required
+                               {% if field.pattern %} pattern="{{field.pattern}}"{% endif %}
+                               placeholder="{{field.placeholder}}"
+                               value="{{field.value}}"
+                               maxlength="50"
+                               size="25"
+                               autocomplete="off"  />
+                        <br/>
+                    {% endfor %}
+                    <div class="marketplace-widget-buy-form__submit-button-wrapper">
+                        <button type="button"  class="button-input  button-input_blue marketplace-widget-buy-form__submit-button" tabindex="">
+                            <span class="button-input-inner ">
+                                <span class="button-input-inner__text"> {{ submit_button_title }}</span>
+                            </span>
+                        </button>
+                    </div>
+                    <div class="marketplace-widget-buy-form__info"></div>
+                </form>
+            </div>
+            <p class="marketplace-widget-buy-form__info--success hidden" >{{ success_message }}</p>
+            <div>
+                <span class="marketplace-widget-buy-form__close modal-body__close">
+                    <span class="icon icon-modal-close"></span>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,14 @@
+<div class="marketplace-widget__switch-button-wrapper">
+    <button type="button"  class="button-input  marketplace-widget-switch-button{% if switch_on %} button-input_blue marketplace-widget-install {% else %} marketplace-widget-uninstall {% endif %}" tabindex="">
+        <span class="button-input-inner ">
+            {% if plus %}
+                <svg width="7" height="8" viewBox="0 0 7 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect y="3.5" width="7" height="1" fill="#ffffff"></rect>
+                <rect x="4" y="0.5" width="7" height="1" transform="rotate(90 4 0.5)" fill="#ffffff"></rect>
+            </svg>
+            {% endif %}
+            <span class="button-input-inner__text">&nbsp;{{button_name}}</span>
+        </span>
+    </button>
+</div>
+<p class="widget-settings__switch-button-message widget-settings__switch-button-message--error"> </p>

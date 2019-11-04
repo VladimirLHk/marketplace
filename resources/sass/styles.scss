@@ -1,0 +1,261 @@
+// AlarmCRM Widget CSS
+$modal_bg: rgba(255, 255, 255, 0.5);
+$error_color: #ff0000;
+$success_color: #008000;
+@mixin placeholder-error {
+  &::-webkit-input-placeholder { @content }
+  &::-moz-placeholder          { @content }
+  &:-moz-placeholder           { @content }
+  &:-ms-input-placeholder      { @content }
+}
+
+.marketplace-widget-card-button {
+  position: relative;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.marketplace-wrapper {
+  @extend .marketplace-widget-card-button;
+  padding: 0 20px 18px 23px;
+}
+
+.marketplace-widget__switch-button-wrapper,
+.widget_settings_block__purchase-demo-subsection-wrap,
+.widget_settings_block__purchase-buy-subsection-wrap,
+.marketplace-widget-buy-form__submit-button-wrapper{
+    &.loader:after {
+      content: "";
+      width: 16px;
+      height: 16px;
+      margin-left: 10px;
+      margin-top: 3px;
+      display: inline-block;
+      z-index: 1010;
+      border: solid 2px transparent;
+      border-top-color: #158fd2;
+      border-left-color: #158fd2;
+      border-radius: 100%;
+      animation: nprogress-spinner 900ms linear infinite;
+    }
+  }
+
+.marketplace-title-block{
+  margin-top: 20px;
+
+  &.loader:after {
+    content: "";
+    width: 16px;
+    height: 16px;
+    position: absolute;
+    left: 200px;
+    top: 3px;
+    margin-left: 10px;
+    display: inline-block;
+    z-index: 1010;
+    border: solid 2px transparent;
+    border-top-color: #158fd2;
+    border-left-color: #158fd2;
+    border-radius: 100%;
+    animation: nprogress-spinner 900ms linear infinite;
+  }
+}
+
+.marketplace-title {
+  display: block;
+  color: #131420;
+  font-size: 18px;
+  margin-bottom: 25px;
+  letter-spacing: -.1px;
+  text-align: left;
+  hr {
+    height: 6px;
+    border: 0px solid #d3d7d8;
+    border-top-width: 3px;
+    width: 320px;
+    margin-left: 0px;
+  }
+}
+
+.marketplace-widget-card-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.marketplace-widget-card__wrapper {
+  position: relative;
+  width: 200px;
+}
+
+.marketplace-widget-card{
+  box-sizing: border-box;
+  cursor: pointer;
+  margin: 0 15px 27px 0;
+}
+
+.marketplace-widget-card-block-full{
+
+}
+
+.marketplace-widget-card__img{
+  border-radius: 6px;
+  height: 124px;
+  width: 182px;
+}
+
+.marketplace-widget-card-notice{
+
+}
+
+.marketplace-widget-card-description{
+  display: flex;
+  -webkit-box-pack: start;
+  justify-content: flex-start;
+  -webkit-box-align: baseline;
+  align-items: baseline;
+}
+
+.marketplace-widget-card-description__name{
+  line-height: 1;
+  max-width: 90%;
+  font-weight: 700;
+  padding-bottom: 2px;
+  margin-top: 12px;
+}
+
+.marketplace-widget-card-description__short-text{
+  font-size: 12px;
+  color: #92989b;
+  line-height: 14px;
+  margin: 12px 0 12px 0;
+  white-space: normal;
+  height: 28px;
+  text-overflow: ellipsis;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+.marketplace-widget-full-description-wrapper {
+  background-color: $modal_bg;
+}
+
+.widget-settings {
+  &__options {
+    padding: 16px 0;
+  }
+
+  &__response-info,
+  &__switch-button-message,
+  &_block__purchase-buy-message,
+  &_block__purchase-demo-message{
+    padding-top: 10px;
+
+    &--success {
+      color: $success_color;
+    }
+
+    &--error{
+      color: $error_color;
+    }
+  }
+}
+
+.marketplace-widget-buy-form__info {
+  padding-top: 10px;
+
+  &--success {
+    color: $success_color;
+    text-align: center;
+    line-height: 2;
+    padding: 20px;
+  }
+
+  &--error{
+    color: $error_color;
+  }
+}
+
+.red_border {
+  border: solid 2px $error_color;
+}
+
+.widget_settings_block{
+  &__head-desc {
+    overflow: hidden;
+  }
+
+  &__purchase{
+    &-price-text {
+      font-weight: bold;
+    }
+  }
+
+  &__top-margin {
+    margin-top: 10px;
+  }
+}
+
+.widget-settings{
+  position: relative;
+  &__form{
+    position: relative;
+  }
+  &__blocked-{
+    &settings,
+    &descripion{
+      background-color: white;
+      opacity: 0.5;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+  }
+
+}
+
+.button-input-disabled.loader:after {
+  content: "";
+  width: 16px;
+  height: 16px;
+  margin-left: 21px;
+  margin-top: -3px;
+  display: inline-block;
+  position: absolute;
+  z-index: 1010;
+  border: solid 2px transparent;
+  border-top-color: #158fd2;
+  border-left-color: #158fd2;
+  border-radius: 100%;
+  animation: nprogress-spinner 900ms linear infinite;
+}
+
+.marketplace-widget-buy-form {
+  &.modal-body.modal-body-relative {
+    top: 50px;
+    width: 460px;
+  }
+  &__product-choice-block,
+  &__contact-info-block {
+    margin-top: 24px;
+    margin-bottom: 8px;
+  }
+  &__body-title {
+    //text-align: center
+  }
+  &__field-title {
+    display: inline-block;
+    width: 140px;
+    margin: 12px 12px 12px 0;
+    //text-align: right;
+  }
+  &__submit-button-wrapper {
+    //text-align: center;
+    margin-top: 20px;
+  }
+  &__placeholder-error {
+    @include placeholder-error {
+      color: $error_color;
+    }
+  }
+}
+

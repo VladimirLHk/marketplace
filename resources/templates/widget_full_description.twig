@@ -1,0 +1,94 @@
+<div class="modal modal-list widget-settings__modal marketplace-widget-full-description-wrapper {{ title }}">
+    <div class="modal-scroller custom-scroll">
+        <div class="modal-body modal-body-relative">
+            <div class="widget-settings ">
+                <div class="widget-settings__base-space">
+                    <div class="widget_main_info" id="widget-settings__base-space__top-block">
+                        <div class="widget_settings_block__img"><img src="{{ image_url }}" onerror="this.parentNode.className += ' widget-card__img_border '; this.remove();">
+                        </div>
+                        <div class="widget_settings_block__head">
+                            <div class="widget_settings_block__title h-text-overflow" title="{{ description_name }}">{{ description_name }}</div>
+                            <div class="widget_settings_block__head-desc">{{ description_text }}</div>
+                        </div>
+                        <div class="marketplace-widget-card-button" data-code="{{ wCode }}">
+                            {% if purchase %}
+                            <div class="widget_settings_block__purchase">
+                                {% if price_text %}<p class="widget_settings_block__top-margin">{{ price_text }}</p> {% endif %}
+                                <div class="widget_settings_block__purchase-section">
+                                    <div class="widget_settings_block__purchase-buy-subsection-wrap widget_settings_block__top-margin">
+                                        <button type="button"  class="button-input  button-input_blue marketplace-widget-buy" tabindex="">
+                                            <span class="button-input-inner ">
+                                                <span class="button-input-inner__text">&nbsp;Купить виджет</span>
+                                            </span>
+                                        </button>
+                                    </div>
+                                    <p class="widget-settings_block__purchase-buy-message widget-settings_block__purchase-buy-message--error"> </p>
+                                    {% if demo %}
+                                        <div class="widget_settings_block__purchase-demo-subsection-wrap widget_settings_block__top-margin">
+                                            <button type="button" class="button-input  marketplace-widget-demo" tabindex="">
+                                                    <span class="button-input-inner ">
+                                                        <span class="button-input-inner__text">Демо на {{trial_period}} дней </span>
+                                                    </span>
+                                            </button>
+                                        </div>
+                                        <p class="widget-settings_block__purchase-demo-message widget-settings_block__purchase-demo-message--error"> </p>
+                                    {% endif %}
+                                    {% if ask_license_agreement == true %}
+                                        <label class="control-checkbox widget_settings_block__top-margin widget_settings_block__license-agreement">
+                                            <div class="control-checkbox__body">
+                                                <input type="checkbox" class="control-checkbox" name="licenseAgreement" id="licenseAgreement" value="{{value}}" data-value="{{dataValue or value}}" {{additional_data}}/>
+                                                <span class="control-checkbox__helper {% if checked_minus %}control-checkbox__helper_minus{% endif %}"></span>
+                                            </div>
+                                            <div class="control-checkbox__text element__text" title="Для включения необходимо принять Лицензионное соглашение">
+                                                <span class="control-checkbox__note-text ">Принять <a class="blue-link" href="#"> Лицензионное соглашение</a></span>
+                                            </div>
+                                        </label>
+                                    {% endif %}
+                                </div>
+                            </div>
+                            {% endif %}
+                            {% if modalButton %} <div class="widget_settings_block__top-margin">{{ modalButton }}</div> {% endif %}
+                        </div>
+                        {% if expired_info %}<p class="widget_settings_block__top-margin">{{expired_info}}</p>{%  endif %}
+                    </div><hr class="widget_settings_block__separator">
+                    <div class="widget_main_info widget_settings_block__feed-back ">
+                        <div class="widget-support-page__link">
+                            <a href="" target="_blank" class="button-input widget-support-page__button">
+                                Обратная связь
+                                <svg class="svg-icon svg-settings--widgets--support_page-dims">
+                                    <use xlink:href="#settings--widgets--support_page">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 19 19" id="settings--widgets--support_page"><path d="M9.5.875a8.6 8.6 0 0 0-6.1 2.522c-3.366 3.365-3.366 8.84 0 12.205 3.365 3.364 8.836 3.364 12.2 0 3.366-3.365 3.366-8.84 0-12.205A8.6 8.6 0 0 0 9.5.875zm0 1.378a7.23 7.23 0 0 1 3.324.81L10.996 4.89a4.877 4.877 0 0 0-2.992 0L6.176 3.062a7.23 7.23 0 0 1 3.324-.81zM4.38 4.377c.194-.195.398-.373.61-.542L6.7 5.54a4.743 4.743 0 0 0-1.158 1.163l-1.71-1.71c.169-.213.35-.42.547-.616zM12.3 5.54l1.71-1.705c.212.169.416.347.61.542.198.197.38.403.549.616l-1.711 1.71A4.749 4.749 0 0 0 12.3 5.54zm-2.8.492c.886 0 1.772.34 2.451 1.02a3.457 3.457 0 0 1 0 4.901 3.46 3.46 0 0 1-4.902 0 3.457 3.457 0 0 1 0-4.901A3.458 3.458 0 0 1 9.5 6.032zm-4.614 4.966L3.058 12.82a7.238 7.238 0 0 1 .006-6.635l1.822 1.816a4.893 4.893 0 0 0 0 2.997zM14.114 8l1.822-1.816a7.238 7.238 0 0 1 .006 6.635l-1.828-1.822a4.893 4.893 0 0 0 0-2.997zM3.831 14.006L5.537 12.3c.157.22.335.429.532.626.196.196.405.375.626.532l-1.706 1.704a7.195 7.195 0 0 1-.61-.541 7.164 7.164 0 0 1-.548-.616zm9.1-1.08c.198-.196.375-.404.532-.625l1.706 1.705c-.17.214-.35.418-.548.616-.194.194-.4.374-.61.541l-1.706-1.704c.22-.157.43-.336.626-.532zm-6.755 3.011l1.828-1.828c.971.312 2.021.312 2.992 0l1.828 1.828a7.237 7.237 0 0 1-6.648 0z" fill="#333" stroke="#333" stroke-width=".25"></path></svg>
+                                    </use>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="widget-settings__wrap-desc-space">
+                    <div class="widget-settings__desc-space">
+                        {{ right_side }}
+                        <form class="widget-settings__form hidden" code="{{ wCode }}">
+                            <div class="widget-settings__options"></div>
+                            <button type="button"  class="button-input  button-input_blue marketplace-widget-save" tabindex="">
+                            <span class="button-input-inner ">
+                                <span class="button-input-inner__text"> Сохранить</span>
+                            </span>
+                            </button>
+                            <div class="widget-settings__response-info"></div>
+                            <div class="widget-settings__blocked-settings hidden"></div>
+                        </form>
+                    </div>
+                    <div>
+                    <span class="modal-body__close">
+                        <span class="icon icon-modal-close"></span>
+                    </span>
+                    </div>
+                </div>
+            </div>
+            <div class="widget-settings__blocked-descripion hidden"></div>
+        </div>
+    </div>
+    <div class="default-overlay modal-overlay  modal-overlay_white  default-overlay-visible">
+        <span class="modal-overlay__spinner spinner-icon spinner-icon-abs-center" style="display: none;"></span>
+    </div>
+</div>
